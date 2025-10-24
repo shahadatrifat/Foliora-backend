@@ -73,9 +73,13 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    const booksCollection = client.db("foliora").collection("books");
-    const readingGoalsCollection = client.db("foliora").collection("readingGoals");
-    const bookmarksCollection = client.db("foliora").collection("bookmarks");
+    await client.connect();
+    console.log("✅ MongoDB connected successfully");
+
+    const db = client.db("foliora");
+    const booksCollection = db.collection("books");
+    const readingGoalsCollection = db.collection("readingGoals");
+    const bookmarksCollection = db.collection("bookmarks");
 
     // POST: Add book
     app.post("/api/books", async (req, res) => {
@@ -185,7 +189,7 @@ async function run() {
     app.get("/api/genres", async (req, res) => {
       try {
         const genres = await booksCollection.distinct("genre");
-        res.send(genres.filter(g => g)); // Remove null/undefined
+        res.send(genres.filter(g => g)); 
       } catch (error) {
         res.status(500).send({ error: "Failed to fetch genres", message: error.message });
       }

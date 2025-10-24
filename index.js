@@ -13,6 +13,7 @@ app.use(
         "https://foliora-project.vercel.app",
         "https://foliora-project-iojx2efk6-zazazawgs-projects.vercel.app", 
         "https://foliora.netlify.app", 
+        "http://localhost:5173"
     ],
     credentials: true,
   })

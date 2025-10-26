@@ -13,6 +13,9 @@ app.use(
       
       "https://foliora.netlify.app",
       "http://localhost:5173",
+      "http://localhost:3000",
+      "foliora-project-bzo2o054t-zazazawgs-projects.vercel.app"
+
       
     ],
     credentials: true,
@@ -650,3 +653,6 @@ app.get("/", (req, res) => {
   res.send(" Foliora Server is running s!");
 });
 
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

@@ -12,6 +12,7 @@ app.use(
     origin: [
       
       "https://foliora.netlify.app",
+      "http://localhost:5173",
       
     ],
     credentials: true,
@@ -646,7 +647,6 @@ run().catch(console.dir);
 
 // Default root route
 app.get("/", (req, res) => {
-  res.send("🚀 Foliora Server is running with enhanced features!");
+  res.send(" Foliora Server is running s!");
 });
-
 

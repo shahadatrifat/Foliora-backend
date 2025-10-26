@@ -649,7 +649,4 @@ app.get("/", (req, res) => {
   res.send("🚀 Foliora Server is running with enhanced features!");
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`✅ Server is listening on port ${port}`);
-});
+
